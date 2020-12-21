@@ -36,7 +36,7 @@ equ(m4_angmin)(t,bus_pairs(i,j))..               fi(t,i) - fi(t,j) =g= angmin(i,
 equ(m4_R_UP)(t,k)$(ramp_up(k)>0 and ord(t)>1)..  Pgen(t,k) - Pgen(t-1,k) =l= ramp_up(k);
 equ(m4_R_DN)(t,k)$(ramp_dn(k)<0 and ord(t)>1)..  Pgen(t,k) - Pgen(t-1,k) =g= ramp_dn(k);
 
-model m4_verification /m4_obj,m4_bus_p,m4_bus_q,m4_power_fr,m4_power_to,m4_reactive_fr,m4_reactive_to,m4_linemax,m4_pg_max,m4_pg_min,m4_pq_max,m4_pq_min,
+model m4_app_error    /m4_obj,m4_bus_p,m4_bus_q,m4_power_fr,m4_power_to,m4_reactive_fr,m4_reactive_to,m4_linemax,m4_pg_max,m4_pg_min,m4_pq_max,m4_pq_min,
                        m4_volt_max,m4_volt_min,m4_ref,m4_angmax,m4_angmin,m4_R_UP,m4_R_DN/;
 
 *The model is NLP

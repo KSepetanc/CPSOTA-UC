@@ -23,7 +23,7 @@ V.l(t,i)=1; //Variable initialization
 $include model1_polar.gms
 $include model2_presolve.gms
 $include model3_UC.gms
-$include model4_verification.gms
+$include model4_app_error.gms
 
 option reslim=3600;
 option nlp=knitro;
@@ -57,7 +57,7 @@ solve m3_UC using miqcp minimizing obj; //Consider using MIPStart if run in a lo
 obj_step3=obj.l;
 
 
-solve m4_verification using nlp minimizing obj; //Consider using verification solution as final solution. This way no iterations are required. This is recommended approach.
+solve m4_app_error using nlp minimizing obj; //Consider using verification solution as final solution. This way no iterations are required. This is recommended approach.
 gap=(obj_step3-obj.l)/obj.l;
 
 display gap;
