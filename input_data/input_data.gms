@@ -1,5 +1,5 @@
 set t/t1*t24/;
-alias(t,tt);
+alias(t,h);
 
 set i "bus", e "branch", k "gen", l "load", s "shunt";
 alias(i,j);

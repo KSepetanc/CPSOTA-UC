@@ -39,8 +39,8 @@ equ(m1_R_DN)(t,k)$(ramp_dn(k)<0 and ord(t)>1)..  Pgen(t,k) - Pgen(t-1,k) =g= ram
 equ(m1_3bin_1)(t,k)$active_p_gen..               y(t,k) - z(t,k) =e= x(t,k) - x(t-1,k) - 1$(ord(t)=1);
 equ(m1_3bin_2)(t,k)$active_p_gen..               y(t,k) + z(t,k) =l= 1;
 
-equ(m1_3bin_MD)(t,k)$active_p_gen..              sum(tt$(ord(tt)>=ord(t)-MD(k)+1 and ord(tt)<=ord(t)),z(tt,k)) =l= 1 - x(t,k);
-equ(m1_3bin_MU)(t,k)$active_p_gen..              sum(tt$(ord(tt)>=ord(t)-MU(k)+1 and ord(tt)<=ord(t)),y(tt,k)) =l= x(t,k);
+equ(m1_3bin_MD)(t,k)$active_p_gen..              sum(h$(ord(h)>=ord(t)-MD(k)+1 and ord(h)<=ord(t)),z(h,k)) =l= 1 - x(t,k);
+equ(m1_3bin_MU)(t,k)$active_p_gen..              sum(h$(ord(h)>=ord(t)-MU(k)+1 and ord(h)<=ord(t)),y(h,k)) =l= x(t,k);
 
 model m1_polar/m1_obj,m1_bus_p,m1_bus_q,m1_power_fr,m1_power_to,m1_reactive_fr,m1_reactive_to,m1_linemax,m1_pg_max,m1_pg_min,m1_pq_max,m1_pq_min,
                m1_volt_max,m1_volt_min,m1_ref,m1_angmax,m1_angmin,m1_R_UP,m1_R_DN,m1_3bin_1,m1_3bin_2,m1_3bin_MD,m1_3bin_MU/;
